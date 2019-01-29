@@ -1,14 +1,15 @@
-label {
-    display: block;
-    font: 1rem 'Fira Sans', sans-serif;
-}
+/* FOOTER */
 
-input,
-label {
-    margin: .4rem 0;
-}
-
-.note {
-    font-size: .8em;
-}
-
+body {
+    background-color: lightblue;
+  }
+  
+  h1 {
+    color: white;
+    text-align: center;
+  }
+  
+  p {
+    font-family: verdana;
+    font-size: 20px;
+  }

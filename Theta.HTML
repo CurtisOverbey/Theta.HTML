@@ -1,5 +1,6 @@
 <html lang="en">
 <head>
+    <link href="Theta.CSS" rel="stylesheet" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -8,25 +9,79 @@
     <header> THETA and The Best Time to Sell Premium</header></H1>
 </head>
 <body>
-         
+       <script src="Theta.Js"></script>    
         <style>
-                h1 {color:red;}
+                h1 {color:blue;}
                  </style>
              
-             <!--code for current date-->    
-             <label for="start"> Today's Date</label>
+                 
              <p>
+                <!--code for current date--> 
+                <label for="start"> Today's Date</label>
                 <script> document.write(new Date().toLocaleDateString()); </script>
+                
                 </p>
-                <script>
-                document.getElementById("date").innerHTML = Date();
-                </script>
-            <!--code allowing user to choose date on calender-->
+                
+                <!--code allowing user to choose date on calender-->
+                <form action="/action_page.php">
+                <label for="end">Option Expiration date: </label> <input type="date" name="fname"><br>
+                </form>
+               
+                <!--code allowing user to enter strike price-->  
+               <form action="/action_page.php">
+                <label for="end">Strike Price: </label> <input type="number" name="fname"><br>
+                </form>
+               
+                <!--code allowing user to enter stock price-->  
+               <form action="/action_page.php">
+                <label for="end">Current Stock Price: </label> <input type="number" name="fname"><br>
+                </form>  
+               
+                <!--code allowing user to enter VIX-->  
+               <form action="/action_page.php">
+                <label for="end">VIX: </label> <input type="number" name="fname"><br>
+                </form>  
+               
+                <!--code allowing user to enter Risk Free Rate of Return-->  
+               <form action="/action_page.php">
+                <label for="end">Risk Free Rate of Return: </label> <input type="number" name="fname"><br>
+                </form>  
+                <input type="submit" value="Submit"> 
+<!--code that will return when to sell premium and call and put price-->  
+<h1>
+    When to Sell Premium
+</h1> 
+    <form action="/action_page.php">
+        <label for="end">Days before Expiration: </label> <input type="number" name="fname"><br>
+        </form>
+<h1>
+    Call and Put pricing
+</h1>
+    <form action="/action_page.php">
+        <label for="end">Call Price: </label> <input type="number" name="fname"><br>
+        </form>
+    <form action="/action_page.php">
+         <label for="end">Put Price: </label> <input type="number" name="fname"><br>
+         </form>
 
-             <label for="end">Option Expiration date:</label>
-             
-
-<h1>THETA CALCULATION</h1> 
 
 </body>
+
+<!-- FOOTER -->
+<footer>
+    <p>Posted by: Curtis Overbey</p>
+    <p>Contact information: <a href="mailto: curtisoverbey16@gmail.com">Email Curtis Overbey</a>
+    </p>
+    
+
+<!--Facebook icon-->
+<a href="https://www.facebook.com/curtis.overbey" target="_blank"><img alt="" src="https://s3.amazonaws.com/flashissue/YdvNzBsfTrqg9Cx9Tozh_Facebook-e1386022800280.png" style="height:50px; width:50px" /> </a>&nbsp; &nbsp; &nbsp;
+<!--Twitter icon-->
+<a href="https://twitter.com/curtisoverbey" target="_blank"><img alt="" src="https://s3.amazonaws.com/flashissue/3b3zdiavSf26SleQOaDd_twitter-e1386023015819.png" style="height:50px; width:50px" /> </a>&nbsp; &nbsp;&nbsp;
+<!--Linkedin icon-->
+<a href="https://www.linkedin.com/in/curtis-overbey" target="_blank"><img alt="" src="https://s3.amazonaws.com/flashissue/dJtLdIsbRAix3zQhvygP_linkedin_icon_dark_hover-5be7d72ca83a10c0c76c32d141b0b828.png" style="height:50px; width:50px" /> </a>
+</p>
+
+</footer>
 </html>
+
