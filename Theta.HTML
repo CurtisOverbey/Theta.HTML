@@ -7,61 +7,69 @@
     <title>THETA</title>
     <H1>
     <header> THETA and The Best Time to Sell Premium</header></H1>
+    <script src="Theta.Js"></script>
 </head>
 <body>
-       <script src="Theta.Js"></script>    
+        
+        
         <style>
                 h1 {color:blue;}
                  </style>
              
-                 
-             <p>
+               
+             <p> 
                 <!--code for current date--> 
                 <label for="start"> Today's Date</label>
-                <script> document.write(new Date().toLocaleDateString()); </script>
-                
-                </p>
+                <script>  document.write(new Date().toLocaleDateString()); id= "todaysdate" </script>
+              
+            </p>
                 
                 <!--code allowing user to choose date on calender-->
-                <form action="/action_page.php">
-                <label for="end">Option Expiration date: </label> <input type="date" name="fname"><br>
-                </form>
+                <form action="" onsubmit="submission();"> 
+                <label for="end">Option Expiration date: </label> <input id="expirationdate" type="date" name="fname"><br>
+                
                
                 <!--code allowing user to enter strike price-->  
-               <form action="/action_page.php">
-                <label for="end">Strike Price: </label> <input type="number" name="fname"><br>
-                </form>
+               
+                <label for="end">Strike Price: </label> <input id="strikeprice" type="number" name="fname" min="0"> ><br>
+                
                
                 <!--code allowing user to enter stock price-->  
-               <form action="/action_page.php">
-                <label for="end">Current Stock Price: </label> <input type="number" name="fname"><br>
-                </form>  
+               
+                <label for="end">Current Stock Price: </label> <input id="stockprice" type="number" name="fname" min="0"> ><br>
+                
                
                 <!--code allowing user to enter VIX-->  
-               <form action="/action_page.php">
-                <label for="end">VIX: </label> <input type="number" name="fname"><br>
-                </form>  
+               
+                <label for="end">VIX: </label> <input id="vix" type="number" name="fname"><br>
+                
                
                 <!--code allowing user to enter Risk Free Rate of Return-->  
-               <form action="/action_page.php">
-                <label for="end">Risk Free Rate of Return: </label> <input type="number" name="fname"><br>
-                </form>  
-                <input type="submit" value="Submit"> 
+               
+                <label for="end">Risk Free Rate of Return: </label> <input id="RFR" type="number" name="fname" ><br>
+               
+                <!--code for click button--> 
+                
+                <input id="clickme" type="submit" value="Submit"> 
+            </form>  
+                   
+                
 <!--code that will return when to sell premium and call and put price-->  
 <h1>
     When to Sell Premium
 </h1> 
-    <form action="/action_page.php">
-        <label for="end">Days before Expiration: </label> <input type="number" name="fname"><br>
-        </form>
+    
+<label for="end">When to Sell Premium: </label> <input id="whentosell" type="number" name="fname" min="0"> ><br>
+
 <h1>
+
     Call and Put pricing
 </h1>
     <form action="/action_page.php">
-        <label for="end">Call Price: </label> <input type="number" name="fname"><br>
+        <label for="end">Call Price: </label> <input id="call" type="number" name="callPrice"><br>
         </form>
     <form action="/action_page.php">
-         <label for="end">Put Price: </label> <input type="number" name="fname"><br>
+         <label for="end">Put Price: </label> <input id="put" type="number" name="PutPrice"><br>
          </form>
 
 
