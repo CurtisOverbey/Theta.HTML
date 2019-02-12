@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>THETA</title>
     <H1>
-    <header> THETA and The Best Time to Sell Premium</header></H1>
+    <header> THETA, Put and Call Prices</header></H1>
     <script src="Theta.Js"></script>
 </head>
 <body>
@@ -20,7 +20,7 @@
              <p> 
                 <!--code for current date--> 
                 <label for="start"> Today's Date</label>
-                <script>  document.write(new Date().toLocaleDateString()); id= "todaysdate" </script>
+                <script>  document.write(new Date().toLocaleDateString()); id= "date" </script>
               
             </p>
                 
@@ -50,26 +50,26 @@
                
                 <!--code for click button--> 
                 
-                <input id="clickme" type="submit" value="Submit"> 
+                <input id="clickme" type="Submit" value="Submit"> 
             </form>  
                    
                 
 <!--code that will return when to sell premium and call and put price-->  
 <h1>
-    When to Sell Premium
+    THETA
 </h1> 
     
-<label for="end">When to Sell Premium: </label> <input id="whentosell" type="number" name="fname" ><br>
+<label for="end">Theta: </label> <input id="theta" type="number" name="fname" readonly="readonly"><br>
 
 <h1>
 
     Call and Put pricing
 </h1>
     <form action="/action_page.php">
-        <label for="end">Call Price: </label> <input id="call" type="number" name="callPrice"><br>
+        <label for="end">Call Price: </label> <input id="call" type="number" name="callPrice" readonly="readonly"><br>
         </form>
     <form action="/action_page.php">
-         <label for="end">Put Price: </label> <input id="put" type="number" name="PutPrice"><br>
+         <label for="end">Put Price: </label> <input id="put" type="number" name="PutPrice" readonly="readonly"><br>
          </form>
 
 
