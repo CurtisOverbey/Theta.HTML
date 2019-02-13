@@ -54,13 +54,15 @@ function submission() {
     const d2 =(d1-RT);
 
     //N(d1)
-    const Nd1 = math.randomInt([])
-      }
+    const Nd1 = Math.abs(d1);
+      
 var input1 = document.getElementById("call");
 var input2 = document.getElementById("put");
 
 
 input1.value = Nd1;
+input2.value = Nd1;
+
 
 
 
