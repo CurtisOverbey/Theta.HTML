@@ -54,14 +54,21 @@ function submission() {
     const d2 =(d1-RT);
 
     //N(d1)
-    const Nd1 = Math.abs(d1);
-      
+    //const Nd1 =bring in normal distribution function
+
+    //Exponents
+    const Exp1 =Math.exp(-RFR*t);
+    const Exp2 =(SP.value*Exp1)
+    //0 is dividend yeild
+    const Exp3 =Math.exp(0*t);
+    const Exp4 =(S.value*Exp3)
+
 var input1 = document.getElementById("call");
 var input2 = document.getElementById("put");
 
 
-input1.value = Nd1;
-input2.value = Nd1;
+input1.value = Exp2;
+input2.value = Exp2;
 
 
 

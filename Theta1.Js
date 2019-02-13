@@ -10,9 +10,9 @@ function normalcdf(X){   //HASTINGS.  MAX ERROR = .000001
 }   
 
 function compute(form) {
-    Z=eval(form.argument.value)
-    M=eval(form.mean.value)
-    SD=eval(form.stdev.value)
+    Z=eval(0.744479)
+    M=eval(0)
+    SD=eval(1)
     with (Math) {
 		if (SD<0) {
 			alert("The standard deviation must be nonnegative.")
