@@ -10,7 +10,7 @@ function normalcdf(X){   //HASTINGS.  MAX ERROR = .000001
 }   
 
 function compute(form) {
-    Z=eval(0.744479)
+    Z=eval(form.argument.value)
     M=eval(0)
     SD=eval(1)
     with (Math) {

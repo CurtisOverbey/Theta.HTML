@@ -19,13 +19,13 @@
                
              <p> 
                 <!--code for current date--> 
-                <label for="start"> Today's Date</label>
-                <script>  document.write(new Date().toLocaleDateString()); id= "date" </script>
-              
+                <label for="start"> Today's Date&nbsp;</label>
+                <p id="currDate"></p>
+                <script>  document.getElementById('currDate').innerText = new Date().toLocaleDateString();</script>
             </p>
                 
                 <!--code allowing user to choose date on calender-->
-                <form action="" onsubmit="submission();"> 
+                <form action="" onsubmit="return submission();"> 
                 <label for="end">Option Expiration date: </label> <input id="expirationdate" type="date" name="fname"><br>
                 
                

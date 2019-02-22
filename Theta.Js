@@ -8,6 +8,17 @@
 //const RF = document.getElementById("RFR");
 //("clickme");
 
+//N(d1)
+    //const Nd1 =bring in normal distribution function
+    function normalcdf(d1) {   //HASTINGS.  MAX ERROR = .000001
+        var T =1/(1+.2316419*Math.abs(d1));
+        var D=.3989423*Math.exp((-d1)*d1/2);
+        var Prob=D*T*(.3193815+T*(-.3565638+T*(1.781478+T*(-1.821256+T*1.330274))));
+        if (d1>0) {
+            Prob=1-Prob;
+        }
+        return Prob;
+    }   
 
 
 function submission() {
@@ -15,8 +26,8 @@ function submission() {
  
     //Variables need to get dates to be value;
     
-    //const date2 = document.getElementById("date").val();
-    //const date1 = document.getElementById("expirationdate").val();
+    const date2str = document.getElementById("currDate").innerText;
+    const date1str = document.getElementById("expirationdate").value;
     const S = document.getElementById("stockprice");
     const SP = document.getElementById("strikeprice");
     const V = document.getElementById("vix");
@@ -26,8 +37,9 @@ function submission() {
    //Variables for d1 d2 nd1 nd2 nd-1 nd-2;
    
    //Variable for t;
-   const date1 = new Date("7/13/2010");
-   const date2 = new Date("12/15/2010");
+   const datems = Date.parse(date1str);
+   const date1 = new Date(datems);
+   const date2 = new Date(date2str);
    const timeDiff = Math.abs(date2.getTime() - date1.getTime());
    const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24))
    const t = Math.abs(diffDays / 365); 
@@ -53,9 +65,9 @@ function submission() {
     //D2
     const d2 =(d1-RT);
 
-    //N(d1)
-    //const Nd1 =bring in normal distribution function
-
+    const Prob = normalcdf(d1);
+    
+    
     //Exponents
     const Exp1 =Math.exp(-RFR*t);
     const Exp2 =(SP.value*Exp1)
@@ -67,11 +79,12 @@ var input1 = document.getElementById("call");
 var input2 = document.getElementById("put");
 
 
-input1.value = Exp2;
-input2.value = Exp2;
+input1.value = d2;
+input2.value = d2;
 
 
 
+return false;
 
 
 };
