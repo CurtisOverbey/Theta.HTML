@@ -19,6 +19,18 @@
         }
         return Prob;
     }   
+    
+    //N(d2)
+    //const Nd2 =bring in normal distribution function
+    function normalcdf(d2) {   //HASTINGS.  MAX ERROR = .000001
+        var T =1/(1+.2316419*Math.abs(d2));
+        var D=.3989423*Math.exp((-d2)*d2/2);
+        var Prob=D*T*(.3193815+T*(-.3565638+T*(1.781478+T*(-1.821256+T*1.330274))));
+        if (d2>0) {
+            Prob=1-Prob;
+        }
+        return Prob;
+    }   
 
 
 function submission() {
@@ -65,8 +77,12 @@ function submission() {
     //D2
     const d2 =(d1-RT);
 
-    const Prob = normalcdf(d1);
+    const Prob1 = normalcdf(d1);
+    const Prob2 = normalcdf(d2);
     
+    //N(d2)
+    const Prob3 = (1-Prob1)
+    const Prob4 = (1-Prob2)
     
     //Exponents
     const Exp1 =Math.exp(-RFR*t);
@@ -75,12 +91,16 @@ function submission() {
     const Exp3 =Math.exp(0*t);
     const Exp4 =(S.value*Exp3)
 
+    //call and put
+    const call =Math.abs((Prob1*Exp2)-(Prob2*Exp4));
+    const put =Math.abs((Prob3*Exp2)-(Prob4*Exp4));
+
 var input1 = document.getElementById("call");
 var input2 = document.getElementById("put");
 
 
-input1.value = d2;
-input2.value = d2;
+input1.value = call;
+input2.value = put;
 
 
 
