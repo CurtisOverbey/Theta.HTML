@@ -1,13 +1,4 @@
 
-//Variables ("now in getFormData()");
-//const S = document.getElementById("stockprice");
-//const SP = document.getElementById("strikeprice");
-
-//const B = document.getElementById("expirationdate");
-//const V = document.getElementById("vix");
-//const RF = document.getElementById("RFR");
-//("clickme");
-
 //N(d1)
     //const Nd1 =bring in normal distribution function
     function normalcdf(d1) {   //HASTINGS.  MAX ERROR = .000001
@@ -36,7 +27,7 @@
 function submission() {
 
  
-    //Variables need to get dates to be value;
+    //Beginning Variables;
     
     const date2str = document.getElementById("currDate").innerText;
     const date1str = document.getElementById("expirationdate").value;
@@ -92,8 +83,12 @@ function submission() {
     const Exp4 =(S.value*Exp3)
 
     //call and put
-    const call =Math.abs((Prob1*Exp2)-(Prob2*Exp4));
-    const put =Math.abs((Prob3*Exp2)-(Prob4*Exp4));
+    const call1 =Math.abs((Prob1*Exp2)-(Prob2*Exp4));
+    const put1 =Math.abs((Prob3*Exp2)-(Prob4*Exp4));
+
+    const call = call1.toFixed(4);
+    const put = put1.toFixed(4);
+
 
 var input1 = document.getElementById("call");
 var input2 = document.getElementById("put");
