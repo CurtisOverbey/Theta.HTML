@@ -71,7 +71,7 @@ function submission() {
     const Prob1 = normalcdf(d1);
     const Prob2 = normalcdf(d2);
     
-    //N(d2)
+    //N(d1) N(d2)
     const Prob3 = (1-Prob1)
     const Prob4 = (1-Prob2)
     

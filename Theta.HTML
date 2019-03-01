@@ -1,56 +1,66 @@
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="Theta.CSS" rel="stylesheet" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>THETA</title>
-    <H1>
-    <header> Put and Call Pricing</header></H1>
+    
     <script src="Theta.Js"></script>
 </head>
 <body>
-        
+    <h1>
+        <header> Put and Call Pricing</header></h1>
         
         <style>
                 h1 {color:blue;}
+                h2 {color:black;}
                  </style>
              
                
              <p> 
                 <!--code for current date--> 
+                <div class="form-group">                
                 <label for="start"> Today's Date&nbsp;</label>
-                <p id="currDate"></p>
+                    <p id="currDate"></p>
                 <script>  document.getElementById('currDate').innerText = new Date().toLocaleDateString();</script>
+            </div>
             </p>
                 
                 <!--code allowing user to choose date on calender-->
+                <div class="form-group">    
                 <form action="" onsubmit="return submission();"> 
                 <label for="end">Option Expiration date: </label> <input id="expirationdate" type="date" name="fname"><br>
-                
+                </div>
                
                 <!--code allowing user to enter strike price-->  
-               
+                <div class="form-group"> 
                 <label for="end">Strike Price: </label> <input id="strikeprice" type="number" name="fname"  ><br>
-                
+                </div>
                
                 <!--code allowing user to enter stock price-->  
-               
+                <div class="form-group"> 
                 <label for="end">Current Stock Price: </label> <input id="stockprice" type="number" name="fname" ><br>
-                
+                </div>
                
                 <!--code allowing user to enter VIX-->  
-               
-                <label for="end">VIX: </label> <input id="vix" type="number" name="fname"><br>
+                <div class="form-group"> 
+                <label for="end">VIX: </label> <input id="vix" type="number" name="fname">no decimals, example 20%=20<br>
+                </div>
                 
-               
                 <!--code allowing user to enter Risk Free Rate of Return-->  
-               
-                <label for="end">Risk Free Rate of Return: </label> <input id="RFR" type="number" name="fname" ><br>
-               
+                <div class="form-group"> 
+                <label for="end">Risk Free Rate of Return: </label> <input id="RFR" type="number" name="fname" >
+                no decimals, example 2%=2<br>
+                </div>
+
                 <!--code for click button--> 
-                
+               <h2>
+                <div class="btn btn-primary btn-lg active"> 
                 <input id="clickme" type="Submit" value="Submit"> 
+                </div>
+                </h2>
             </form>  
                    
                 
@@ -62,16 +72,18 @@
     Voila
 </h1>
     <form action="/action_page.php">
+        <div class="form-group"> 
         <label for="end">Call Price: </label> <input id="call" type="number" name="callPrice" readonly="readonly"><br>
-        </form>
+    </div>
+    </form>
+
     <form action="/action_page.php">
-         <label for="end">Put Price: </label> <input id="put" type="number" name="PutPrice" readonly="readonly"><br>
-         </form>
+        <div class="form-group">  
+        <label for="end">Put Price: </label> <input id="put" type="number" name="PutPrice" readonly="readonly"><br>
+    </div>     
+    </form>
     
     
-
-</body>
-
 <!-- FOOTER -->
 <footer>
     <p>Posted by: Curtis Overbey</p>
@@ -88,5 +100,12 @@
 </p>
 
 </footer>
+
+<!--Bootstrip JS-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
 </html>
 
