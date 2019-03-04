@@ -93,9 +93,44 @@ function submission() {
 var input1 = document.getElementById("call");
 var input2 = document.getElementById("put");
 
+    //Delta
+    const calldelta = Prob1.toFixed(4);
+    const putdelta = Prob3.toFixed(4);
+
+    //Gamma
+    const gamma1 = Math.pow(-d1, (2))/2;
+    const gamma2 = 1/Math.exp(gamma1);
+    const gamma3 = ((2*Math.PI))*t;
+    const gamma4 = Math.pow(gamma3, .5)*(S.value * VIX);
+    const gamma5 = gamma2/gamma4;
+    const gamma = gamma5.toFixed(4);
+
+    //Theta
+    const theta1
+    
+
+    //GREEKS
+var input3 = document.getElementById("call delta");
+var input4 = document.getElementById("put delta");
+var input5 = document.getElementById("call gamma");
+var input6 = document.getElementById("put gamma");
+var input7 = document.getElementById("call theta");
+var input8 = document.getElementById("put theta");
+//var input9 = document.getElementById("call vega");
+//var input10 = document.getElementById("put vega");
+//var input11= document.getElementById("call rho");
+//var input12= document.getElementById("put rho");
+
 
 input1.value = call;
 input2.value = put;
+input3.value = calldelta;   
+input4.value = putdelta;
+input5.value = gamma;
+input6.value = gamma;
+input7.value = gamma;
+input8.value = gamma;
+
 
 
 
