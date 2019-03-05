@@ -106,7 +106,25 @@ var input2 = document.getElementById("put");
     const gamma = gamma5.toFixed(4);
 
     //Theta
-    const theta1
+    const theta0 = (Math.pow((d1), (2))/2)*-1;
+    const theta1 =  (Math.exp(theta0))*-S.value;
+    const theta2 = (Math.sqrt(2*Math.PI));
+    const theta3 = (theta1/theta2)*VIX*Exp3
+    const theta4 = theta1/theta2
+    const theta5 = (Math.sqrt(t))*2
+    const theta6 = theta3/theta5
+    const theta7 = (RFR*Exp4*Prob2)+0
+    const calltheta = ((theta6-theta7)/365).toFixed(4);
+    const puttheta = ((theta6+theta7)/365).toFixed(4);
+
+    //Vega
+    const vega1 = Math.exp(theta0);
+    const vega2 = vega1/theta2;
+    const vega3 = vega2*Exp3*S.value*Math.sqrt(t);
+    const vega = (vega3/100).toFixed(4);
+
+    //Rho
+    const rho = ((SP.value*t*Exp1*Prob2)/100).toFixed(4);
     
 
     //GREEKS
@@ -116,10 +134,10 @@ var input5 = document.getElementById("call gamma");
 var input6 = document.getElementById("put gamma");
 var input7 = document.getElementById("call theta");
 var input8 = document.getElementById("put theta");
-//var input9 = document.getElementById("call vega");
-//var input10 = document.getElementById("put vega");
-//var input11= document.getElementById("call rho");
-//var input12= document.getElementById("put rho");
+var input9 = document.getElementById("call vega");
+var input10 = document.getElementById("put vega");
+var input11= document.getElementById("call rho");
+var input12= document.getElementById("put rho");
 
 
 input1.value = call;
@@ -128,8 +146,13 @@ input3.value = calldelta;
 input4.value = putdelta;
 input5.value = gamma;
 input6.value = gamma;
-input7.value = gamma;
-input8.value = gamma;
+input7.value = calltheta;
+input8.value = puttheta;
+input9.value = vega;
+input10.value = vega;
+input11.value = rho;
+input12.value = rho;
+
 
 
 
