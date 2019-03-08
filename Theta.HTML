@@ -8,10 +8,25 @@
     <title>THETA</title>
     
     <script src="Theta.Js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+<script>
+webshims.setOptions('forms-ext', {types: 'date'});
+webshims.polyfill('forms forms-ext');
+$.webshims.formcfg = {
+en: {
+    dFormat: '-',
+    dateSigns: '-',
+    patterns: {
+        d: "yy-mm-dd"
+    }
+}
+};
+</script>
 </head>
 <body>
     <h1>
-        <header> Put and Call Pricing</header></h1>
+        <header> Option Pricing</header></h1>
         
         <style>
                 h1 {color:blue;}
@@ -35,12 +50,12 @@
                
                 <!--code allowing user to enter strike price-->  
                 <div class="form-group"> 
-                <label for="end">Strike Price: </label> <input id="strikeprice" type="number" name="fname"  ><br>
+                <label for="end">Strike Price: </label> <input id="strikeprice" type="number" name="fname" step=".01"  ><br>
                 </div>
                
                 <!--code allowing user to enter stock price-->  
                 <div class="form-group"> 
-                <label for="end">Current Stock Price: </label> <input id="stockprice" type="number" name="fname" ><br>
+                <label for="end">Current Stock Price: </label> <input id="stockprice" type="number" name="fname" step=".01" ><br>
                 </div>
                
                 <!--code allowing user to enter VIX-->  
@@ -68,7 +83,7 @@
 
 <h1>
 
-    Pricing
+    Put and Call Pricing
 </h1>
     <form action="/action_page.php">
         <div class="form-group"> 
@@ -85,6 +100,7 @@
    Greeks
 </h1>
 
+
     <div class="form-inline">
         <label for="formGroupExampleInput">Delta Call</label>
         <input type="text" class="form-control" id="call delta">
@@ -93,6 +109,7 @@
         <label for="formGroupExampleInput2">Delta Put</label>
         <input type="text" class="form-control" id="put delta">
       </div>
+
       <div class="form-inline">
         <label for="formGroupExampleInput2">Gamma Call</label>
         <input type="text" class="form-control" id="call gamma">
@@ -101,6 +118,7 @@
         <label for="formGroupExampleInput2">Gamma Put</label>
         <input type="text" class="form-control" id="put gamma">
       </div>
+
       <div class="form-inline">
         <label for="formGroupExampleInput2">Theta Call</label>
         <input type="text" class="form-control" id="call theta">
@@ -109,6 +127,7 @@
         <label for="formGroupExampleInput2">Theta Put</label>
         <input type="text" class="form-control" id="put theta">
       </div>
+
       <div class="form-inline">
         <label for="formGroupExampleInput2">Vega Call</label>
         <input type="text" class="form-control" id="call vega">
@@ -117,6 +136,7 @@
         <label for="formGroupExampleInput2">Vega Put</label>
         <input type="text" class="form-control" id="put vega">
       </div>
+
       <div class="form-inline">
         <label for="formGroupExampleInput2">Rho Call</label>
         <input type="text" class="form-control" id="call rho">
@@ -125,6 +145,7 @@
         <label for="formGroupExampleInput2">Rho Put</label>
         <input type="text" class="form-control" id="put rho">
       </div>
+    </div>
 </form>
     
 
